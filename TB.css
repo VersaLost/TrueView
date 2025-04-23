@@ -1,0 +1,116 @@
+/* Reset & base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f9ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: #0077b6;
+    color: white;
+    padding: 1.5em 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+header h1 {
+    margin-bottom: 0.5em;
+}
+nav a {
+    color: white;
+    margin: 0 1em;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(to right, #90e0ef, #caf0f8);
+    text-align: center;
+    padding: 3em 1em;
+}
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+.hero p {
+    font-size: 1.2em;
+}
+
+/* Section spacing */
+section {
+    padding: 3em 1.5em;
+    max-width: 900px;
+    margin: auto;
+}
+section h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+/* Pricing list */
+#pricing ul {
+    list-style: none;
+    padding: 0;
+}
+#pricing li {
+    background-color: #e0f7fa;
+    margin: 0.5em 0;
+    padding: 1em;
+    border-left: 5px solid #0077b6;
+}
+
+/* Quote form */
+form {
+    background: #ffffff;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    display: grid;
+    gap: 1em;
+    max-width: 600px;
+    margin: auto;
+}
+input, textarea, button {
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+textarea {
+    resize: vertical;
+}
+button {
+    background: #0077b6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+button:hover {
+    background: #023e8a;
+}
+
+/* Contact Section */
+#contact p {
+    margin: 0.5em 0;
+}
+
+/* Footer */
+footer {
+    background: #0077b6;
+    color: white;
+    text-align: center;
+    padding: 1.5em 0;
+    margin-top: 2em;
+}
+

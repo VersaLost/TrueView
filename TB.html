@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>True View Window Cleaning</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Loading Screen Styles -->
+  <style>
+    #loading-screen {
+      position: fixed;
+      z-index: 9999;
+      background: #111;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-family: 'Courier New', monospace;
+    }
+
+    #loading-screen img {
+      width: 200px;
+      image-rendering: pixelated;
+    }
+
+    #loading-screen h1 {
+      margin-top: 1em;
+      animation: flicker 1.5s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    #main-content {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main-content">
+    <header>
+      <h1>True View Window Cleaning</h1>
+      <nav>
+        <a href="#about">About Us</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#quote">Free Quote</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h2>Let the Sunshine In</h2>
+      <p>Professional window cleaning for homes and businesses.</p>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>We are a locally based window cleaning service in Wilkes-Barre, Pennsylvania and we are dedicated to keeping your windows in top condition.</p>
+    </section>
+
+    <section id="pricing">
+      <h2>Services & Pricing</h2>
+      <ul>
+        <li>Home Window Cleaning - Starting at $10/per window </li>
+        <p>Disclaimer: Price varies with size and condition</p>
+        <li>Restaurant Window Cleaning - Custom Quotes</li>
+        <li>Interior & Exterior Window Cleaning</li>
+      </ul>
+    </section>
+
+    <section id="quote">
+      <h2>Get a Free Quote</h2>
+      <form action="https://formsubmit.co/your-email@example.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required />
+
+        <label for="address">Address:</label>
+        <input type="text" name="address" id="address" />
+
+        <label for="details">Job Details:</label>
+        <textarea name="details" id="details" rows="4" placeholder="Tell us about your windows..."></textarea>
+
+        <button type="submit">Request Quote</button>
+      </form>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: Trueviewwilkes@gmail.com</p>
+      <p>Phone: (570) 855-3871</p>
+      <p>Location: Wilkes-Barre, PA</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 True View Window Cleaning. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- Loading screen injected via JS -->
+  <script>
+    const loadingScreen = document.createElement('div');
+    loadingScreen.id = 'loading-screen';
+    loadingScreen.innerHTML = `
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnE1cjhhd283YTlmbmdzZTh3Mzgyd2t1ZWt6MjNzMncweXMzNHFhaSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/BLnaNz9b4MHep8M9qx/giphy.gif" alt="Washing Windows 8bit">
+
+      <h1>One Step Closer To Cleaner Windows...</h1>
+    `;
+    document.body.appendChild(loadingScreen);
+
+    const delay = Math.floor(Math.random() * 5000) + 5000;
+
+    setTimeout(() => {
+      loadingScreen.style.transition = "opacity 1s ease";
+      loadingScreen.style.opacity = 0;
+
+      setTimeout(() => {
+        loadingScreen.remove();
+        document.getElementById("main-content").style.display = "block";
+      }, 1000);
+    }, delay);
+  </script>
+</body>
+</html>
